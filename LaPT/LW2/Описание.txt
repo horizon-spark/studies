@@ -1,0 +1,12 @@
+Результат работы программы: 
+
+Memory used for type 'signed_char' is 1 b.
+Memory used for symbol '?' is 4 b.
+Range of 'unsigned_char' data type is 0 to 255
+
+Таким образом, мы видим, что:
+1) Под тип 'signed_char' отводится 1 байт,
+2) Под символ '?' отводится 4 байта,
+3) Тип 'unsigned char' принимает значения от 0 до 255 
+
+(*) В программе мы не вычисляли левую границу типа 'unsigned char', а воспользовались тем, что левая граница unsigned-типов это 0 

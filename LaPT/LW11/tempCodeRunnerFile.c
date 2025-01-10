@@ -1,0 +1,11 @@
+    // max = 0;
+    // spaces = 0;
+    // len = strlen(str);
+    // unsigned *result = count_top_words(text,len,top,max);
+    // printf("%u %u %u\n",result[0],result[1],result[2]);
+    // fgets(str,256,fs);
+    // result = count_top_words(text,len,top,max);
+    // printf("%u %u %u\n",result[0],result[1],result[2]);
+    // fgets(str,256,fs);
+    // result = count_top_words(text,len,top,max);
+    // printf("%u %u %u\n",result[0],result[1],result[2]);

@@ -1,0 +1,67 @@
+This Programming Language Python Tutorial is very well suited for beginners and also for experienced 
+programmers. This specially designed free Python tutorial will help you learn Python programming most 
+efficiently, with all topics from basics to advanced (like Web-scraping, Django, Learning, etc.) with 
+examples. 
+What is Python? 
+Python is a high-level, general-purpose, and very popular programming language. Python programming 
+language (latest Python 3) is being used in web development, and Machine Learning applications, along 
+with all cutting-edge technology in Software Industry. Python language is being used by almost all 
+tech-giant companies like – Google, Amazon, Facebook, Instagram, Dropbox, Uber… etc. 
+Writing your first Python Program to Learn Python Programming 
+There are two ways you can execute your Python program: 
+First, we write a program in a file and run it one time. 
+Second, run a code line by line. 
+Here we provided the latest Python 3 version compiler where you can edit and compile your written code 
+directly with just one click of the RUN Button. So test yourself with Python first exercises. 
+Welcome to the Python tutorial section! Here, we’ll cover the essential elements you need to kickstart your 
+journey in Python programming. From syntax and keywords to comments, variables, and indentation, we’ll 
+explore the foundational concepts that underpin Python development. 
+In this segment, we delve into the fundamental aspects of handling input and output operations in Python, 
+crucial for interacting with users and processing data effectively. From mastering the versatile print() 
+function to exploring advanced formatting techniques and efficient methods for receiving user input, this 
+section equips you with the necessary skills to harness Python’s power in handling data streams seamlessly. 
+Python offers, enabling you to manipulate and manage data with precision and flexibility. Additionally, we’ll 
+delve into the dynamic world of data conversion with casting, and then move on to explore the versatile 
+collections Python provides, including lists, tuples, sets, dictionaries, and arrays. 
+By the end of this section, you’ll not only grasp the essence of Python’s data types but also wield them 
+proficiently to tackle a wide array of programming challenges with confidence. 
+From performing basic arithmetic operations to evaluating complex logical expressions, we’ll cover it all. 
+We’ll delve into comparison operators for making decisions based on conditions, and then explore bitwise 
+operators for low-level manipulation of binary data. Additionally, we’ll unravel the intricacies of assignment 
+operators for efficient variable assignment and updating. 
+#
+Most frequent words: Python,and,the
++------------------------------------------+
+| String number | Word 1 | Word 2 | Word 3 | 
+|		1		|	1	 |	  1	  |	  0    |
+|		2		|	2	 |	  0	  |	  0    |
+|		3		|	0	 |	  0	  |	  0    |
+|		4		|	0	 |	  0	  |	  0    |
+|		5		|	1	 |	  0	  |	  0    |
+|		6		|	2	 |	  1	  |	  0    |
+|		7		|	1	 |	  1	  |	  0    |
+|		8		|	1	 |	  0	  |	  0    |
+|		9		|	0	 |	  0	  |	  0    |
+|		10		|	2	 |	  0	  |	  0    |
+|		11		|	1	 |	  0	  |	  0    |
+|		12		|	0	 |	  1	  |	  0    |
+|		13		|	0	 |	  0	  |	  0    |
+|		14		|	1	 |	  1	  |	  1    |
+|		15		|	1	 |	  0	  |	  1    |
+|		16		|	1	 |	  0	  |	  2    |
+|		17		|	1	 |	  2	  |	  0    |
+|		18		|	1	 |	  0	  |	  1    |
+|		19		|	1	 |	  1	  |	  1    |
+|		20		|	0	 |	  1	  |	  1    |
+|		21		|	0	 |	  1	  |	  0    |
+|		22		|	0	 |	  0	  |	  1    |
+|		23		|	1	 |	  2	  |	  0    |
+|		24		|	0	 |	  1	  |	  2    |
+|		25		|	1	 |	  1	  |	  0    |
+|		26		|	0	 |	  0	  |	  2    |
+|		27		|	0	 |	  0	  |	  0    |
+|		28		|	0	 |	  0	  |	  0    |
+|		29		|	0	 |	  1	  |	  0    |
+|		30		|	0	 |	  0	  |	  1    |
+|		31		|	0	 |	  1	  |	  0    |
++------------------------------------------+

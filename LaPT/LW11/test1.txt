@@ -1,0 +1,67 @@
+When we talk about programming languages the first thing that comes to our mind is languages like C, 
+C++, Java, Python etc. But those languages hide the actual working i.e., that abstracts many things from 
+users. But there is a language that really lies on basic concepts behind the programming or interaction 
+between computer hardware. 
+What is Assembly Language. 
+Assembly language is a low-level language that helps to communicate directly with computer hardware. 
+It uses mnemonics to represent the operations that a processor has to do. Which is an intermediate 
+language between high-level languages like C++ and the binary language. It uses hexadecimal and binary 
+values, and it is readable by humans. 
+How Assembly Language Works. 
+Assembly languages contain mnemonic codes that specify what the processor should do. The mnemonic 
+code that was written by the programmer was converted into machine language (binary language) for 
+execution. An assembler is used to convert assembly code into machine language. That machine code is 
+stored in an executable file for the sake of execution. 
+It enables the programmer to communicate directly with the hardware such as registers, memory 
+locations, input/output devices or any other hardware components. Which could help the programmer 
+to directly control hardware components and to manage the resources in an efficient manner. 
+How to execute Assembly Language. 
+Write assembly code: Open any text editor in device and write the mnemonic codes in it and save the 
+file with a proper extension according to your assembler. Extension can be .asm, .s, .asmx. 
+Assembling the code: Convert your code to machine language using an assembler. 
+Generating object file: It will generate an object file corresponding to your code. It will have an 
+extension .obj. 
+Linking and creating executables: Our assembly language might contain multiple source codes. And we 
+have to link them to libraries to make it executable. We can use a linker like lk for this purpose. 
+Running program: After creating an executable file we can run it as usual. It will depend on the software 
+that how to run the program. 
+Components of Assembly Language. 
+Registers: Registers are the fast memory locations situated inside the processor. Which helps ALU to 
+perform arithmetic operations and temporary storing of data. Example: Ax (Accumulator), Bx, Cx. 
+Command: An instruction in assembly code known as a command informs the assembler what to do. 
+#
+Most frequent words: the,to,language
++------------------------------------------+
+| String number | Word 1 | Word 2 | Word 3 | 
+|		1		|	1	 |	  1	  |	  0    |
+|		2		|	1	 |	  0	  |	  0    |
+|		3		|	1	 |	  0	  |	  1    |
+|		4		|	0	 |	  0	  |	  0    |
+|		5		|	0	 |	  0	  |	  1    |
+|		6		|	0	 |	  1	  |	  2    |
+|		7		|	1	 |	  2	  |	  0    |
+|		8		|	1	 |	  0	  |	  2    |
+|		9		|	0	 |	  0	  |	  0    |
+|		10		|	0	 |	  0	  |	  1    |
+|		11		|	2	 |	  0	  |	  0    |
+|		12		|	1	 |	  0	  |	  2    |
+|		13		|	0	 |	  1	  |	  1    |
+|		14		|	1	 |	  0	  |	  0    |
+|		15		|	2	 |	  1	  |	  0    |
+|		16		|	1	 |	  0	  |	  0    |
+|		17		|	1	 |	  2	  |	  0    |
+|		18		|	0	 |	  1	  |	  1    |
+|		19		|	2	 |	  0	  |	  0    |
+|		20		|	0	 |	  1	  |	  0    |
+|		21		|	1	 |	  1	  |	  1    |
+|		22		|	0	 |	  1	  |	  0    |
+|		23		|	0	 |	  0	  |	  0    |
+|		24		|	0	 |	  0	  |	  1    |
+|		25		|	0	 |	  3	  |	  0    |
+|		26		|	1	 |	  0	  |	  0    |
+|		27		|	1	 |	  1	  |	  0    |
+|		28		|	0	 |	  0	  |	  1    |
+|		29		|	2	 |	  1	  |	  0    |
+|		30		|	0	 |	  0	  |	  0    |
+|		31		|	1	 |	  1	  |	  0    |
++------------------------------------------+
