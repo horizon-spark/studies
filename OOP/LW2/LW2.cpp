@@ -128,6 +128,7 @@ class Complex
                 stream << num.Re << '-' << -(num.Im) << 'i' << endl; 
             else 
                 stream << num.Re << endl;
+            return stream;
         }
         Complex operator ++ ()
         {
@@ -228,5 +229,4 @@ int main()
     Complex c1(3,1.732), c2(7,-6), c3 = c1.degree(2);
     c1.print_trigonometric();
     c1.print_exponential();
-
 }
