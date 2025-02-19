@@ -8,8 +8,8 @@ class Stack
     private:
         char data;
         Stack *next;
-        Stack *top;
     public:
+        Stack *top;
         Stack()
         {
             top = NULL;
@@ -39,25 +39,25 @@ int main()
 {
     Stack stack;
     string str;
-    cout << "Imput a string to check" << endl;
+    cout << "Input a string to check" << endl;
     cin >> str;
     for (int i=0;i<str.size();i++) {
         if (str[i] == '{' || str[i] == '(' || str[i] == '[') {
             stack.push(str[i]);
         }
         if (str[i] == '}' || str[i] == ')' || str[i] == ']') {
-            char buff = stack.pop();
-            if (buff == '0') {
+            if (stack.top == NULL) {
                 cout << "The number of closing bracket is more than opening ones";
                 return -1;
             }
+            char buff = stack.pop();
             if ((buff - str[i]) > 2) {
-               cout << "Incorrect order of brackets" << endl;
+               cout << "Incorrect order of brackets on position " << i+1 << endl;
                return 2; 
             }
         }
     }
-    if (stack.pop() != '0') {
+    if (stack.top != NULL) {
         cout << "The number of opening brackets is more than closing ones";
         return 1;
     }
