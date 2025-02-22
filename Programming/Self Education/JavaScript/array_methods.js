@@ -35,3 +35,31 @@
 // alert( filtered ); // 3,1 
 
 // alert( arr ); // 5,3,8,1 
+
+// (3)
+// function filterRangeInPlace(arr,a,b) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] < a || arr[i] > b) 
+//             arr.splice(i,1);
+//     }
+//     return;
+// }
+// let arr = [5, 3, 8, 1];
+// filterRangeInPlace(arr, 1, 4); 
+// alert( arr ); 
+
+// (4)
+// let arr = [5, 2, 1, -10, 8];
+// arr.sort((a,b) => b - a);
+// alert(arr);
+
+// (5)
+// function copySorted(arr) {
+//     return arr.slice().sort();
+// }
+// let arr = ["HTML", "JavaScript", "CSS"];
+// let sorted = copySorted(arr);
+
+// alert( sorted ); 
+// alert( arr ); 
+
