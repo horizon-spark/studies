@@ -141,3 +141,61 @@
 // alert(arr[0].name); // Вася
 // alert(arr[1].name); // Маша
 // alert(arr[2].name); // Петя
+
+// (11)
+// function getAverageAge(arr) {
+//     let ageSum = 0;
+//     for (let person of arr) {
+//         ageSum += person.age;
+//     }
+//     return ageSum / arr.length;
+// }
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [ vasya, petya, masha ];
+
+// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+// (12)
+// function unique(arr) {
+//     let res = [];
+//     for (let item of arr) {
+//         if (!res.includes(item)) res.push(item);
+//     }
+//     return res;
+//   }
+  
+//   let strings = ["кришна", "кришна", "харе", "харе",
+//     "харе", "харе", "кришна", "кришна", ":-O"
+//   ];
+  
+//   alert( unique(strings) ); // кришна, харе, :-O
+
+// (13)
+// function groupById(arr) {
+//     let res = {};
+//     for (let item of arr) {
+//         res.item.id = item;
+//     }
+//     return res;
+// }
+
+// let users = [
+//     {id: 'john', name: "John Smith", age: 20},
+//     {id: 'ann', name: "Ann Smith", age: 24},
+//     {id: 'pete', name: "Pete Peterson", age: 31},
+//   ];
+  
+// let usersById = groupById(users);
+  
+  /*
+  после вызова у нас должно получиться:
+  
+  usersById = {
+    john: {id: 'john', name: "John Smith", age: 20},
+    ann: {id: 'ann', name: "Ann Smith", age: 24},
+    pete: {id: 'pete', name: "Pete Peterson", age: 31},
+  }
+  */ 
