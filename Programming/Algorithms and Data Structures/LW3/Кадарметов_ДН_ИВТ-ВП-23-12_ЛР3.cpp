@@ -23,18 +23,19 @@ void digitsSumIter(int num)
 bool isFirstIter = true;
 int digitsSumRecur(int num)
 {
+    int nextIterSum = 0;
     if (isFirstIter) {
         if (num == 0) return 0;
-        cout << num % 10;
         isFirstIter = false;
-        return num % 10 + digitsSumRecur(num / 10);
+        nextIterSum = digitsSumRecur(num / 10);
+        cout << num % 10;
+        return num % 10 + nextIterSum;
     }
-    if (num == 0) {
-        cout << " = ";
+    if (num == 0) 
         return 0;
-    } 
-    cout << " + " << num % 10;
-    return num % 10 + digitsSumRecur(num / 10);
+    nextIterSum = digitsSumRecur(num / 10);
+    cout << num % 10 << " + ";
+    return num % 10 + nextIterSum;
 }
 
 int main()
@@ -46,6 +47,6 @@ int main()
     digitsSumIter(abs(number));
     cout << "Recursive solution: " << endl;
     int res = digitsSumRecur(abs(number));
-    cout << res << endl;
+    cout << " = " << res << endl;
     return 0;
 }
