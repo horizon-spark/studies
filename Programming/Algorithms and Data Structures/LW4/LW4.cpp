@@ -60,8 +60,8 @@ vector<int> LSDSort(vector<int> arr, int k)
                 lsdArray[i].pop();
             }
         }
-        // cout << "After sorting by position " << j << ':' << endl;
-        // printArr(res);
+        cout << "After sorting by position " << j << ':' << endl;
+        printArr(res);
     }
     return res;
 }
