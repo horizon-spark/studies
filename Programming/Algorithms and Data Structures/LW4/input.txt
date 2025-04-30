@@ -1,7 +1,10 @@
+apple
+hell
 hello
 world
 Shell
 alpha
+hall
 cheer
 hunch
 merge
