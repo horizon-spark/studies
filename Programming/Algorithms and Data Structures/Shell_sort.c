@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 
 void ShellSort(int size, int *mass)
 {
@@ -22,6 +22,7 @@ int main()
     int arr[] = {5, 17, 11, 25, 0, 3, 10, 20, 4, 8};
     ShellSort(10, arr);
     for (int i = 0; i < 10; i++) {
-        std::cout << arr[i] << " ";
+        if (i < 9) printf("%d, ",arr[i]);
+        else printf("%d\n",arr[i]);
     }
 }
