@@ -8,7 +8,6 @@ int switches = 0;
 
 void printArray(vector<int>& arr)
 {
-    cout << "\t\t\t";
     for (int i = 0; i < arr.size(); i++) {
         if (i < arr.size() - 1) cout << arr[i] << ", ";
         else cout << arr[i] << endl;
@@ -50,7 +49,7 @@ void HeapSort(vector<int>& arr)
     for (int i = arr.size() - 1; i > 0; i--) {
         buf = arr[0]; arr[0] = arr[i]; arr[i] = buf;
         cout << "Switches required: " << switches << endl;
-        switches = 0;
+        switches = 1;
         Heap(0, i - 1, arr);
         cout << "After iteration " << arr.size() - i << ":" << endl;
         printArray(arr);
