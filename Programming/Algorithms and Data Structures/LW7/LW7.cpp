@@ -32,8 +32,12 @@ int partition(vector<int>& arr, int left, int right)
             if (j == left) break;
         if (i >= j) break;
         buf = arr[i]; arr[i] = arr[j]; arr[j] = buf;
+        cout << "Swapping elements " << arr[i] << " and " << arr[j] << endl;
+        printArray(arr);
     } 
     buf = arr[i]; arr[i] = arr[right]; arr[right] = buf;
+    cout << "Swapping elements " << arr[i] << " and " << arr[right] << endl;
+    printArray(arr);
     return i; 
 }
 
@@ -55,7 +59,7 @@ int main()
     vector<int> array = generateArray(n);
     cout << "The generated array: " << endl;
     printArray(array);
-    quickSort(array, 0, n);
+    quickSort(array, 0, n - 1); // Передаем arr.size() - 1 как правую границу? 
     cout << "The sorted array:" << endl;
     printArray(array);
     return 0;
