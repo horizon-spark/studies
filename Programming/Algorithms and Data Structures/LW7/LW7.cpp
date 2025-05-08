@@ -4,6 +4,8 @@
 
 using namespace std;
 
+int step = 1;
+
 void printArray(vector<int>& arr)
 {
     for (int i = 0; i < arr.size(); i++) {
@@ -26,18 +28,31 @@ vector<int> generateArray(int size)
 int partition(vector<int>& arr, int left, int right)
 {
     int i = left - 1, j = right, v = arr[right], buf;
+    cout << "Step " << step << endl;
+    cout << "Base element " << v << endl;
     for ( ; ; ) {
         while (arr[++i] < v);
-        while (v < arr[--j])
-            if (j == left) break;
-        if (i >= j) break;
+        while (v < arr[--j]) {
+            if (j == left) {
+                cout << "j == left => exit the cycle" << endl;
+                break;
+            } 
+        }
+        if (i >= j) {
+            cout << "i >= j => exit the cycle" << endl;
+            break;
+        }
+        cout << arr[i] << " > " << v << endl;
+        cout << arr[j] << " < " << v << endl;
         buf = arr[i]; arr[i] = arr[j]; arr[j] = buf;
-        cout << "Swapping elements " << arr[i] << " and " << arr[j] << endl;
+        cout << "Swapping elements " << arr[j] << " and " << arr[i] << endl;
         printArray(arr);
     } 
     buf = arr[i]; arr[i] = arr[right]; arr[right] = buf;
     cout << "Swapping elements " << arr[i] << " and " << arr[right] << endl;
     printArray(arr);
+    cout << endl;
+    step++;
     return i; 
 }
 
@@ -59,6 +74,7 @@ int main()
     vector<int> array = generateArray(n);
     cout << "The generated array: " << endl;
     printArray(array);
+    cout << endl;
     quickSort(array, 0, n - 1); // Передаем arr.size() - 1 как правую границу? 
     cout << "The sorted array:" << endl;
     printArray(array);
