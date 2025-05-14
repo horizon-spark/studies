@@ -37,6 +37,19 @@ int stepIncrement(int step, int mode)
     }
 }
 
+string stepFormula(int mode)
+{
+    switch(mode)
+    {
+        case 0:
+            return "2h";
+        case 1:
+            return "2h + 1";
+        default:
+            return "3h + 1";
+    }
+}
+
 vector<int> ShellSort(vector<int> array, int mode)
 {
     switches = 0;
@@ -44,6 +57,7 @@ vector<int> ShellSort(vector<int> array, int mode)
     int stepDivisor = mode < 2 ? 2 : 3; 
     int v = 0, h = 0;
     for (h = 1; h <= arr.size() / 9; h = stepIncrement(h, mode));
+    cout << "Starting the Shell Sort with step " << stepFormula(mode) << ':' << endl;
     for (; h > 0; h /= stepDivisor) {
         for (int i = h; i < arr.size(); i++) {
             int j = i;
@@ -55,6 +69,8 @@ vector<int> ShellSort(vector<int> array, int mode)
             }
             arr[j] = v;
         }
+        cout << "After sorting with step h = " << h << ":" << endl;
+        printArray(arr);
     }
     return arr;
 }
@@ -67,9 +83,9 @@ int main()
     vector<int> array = generateArray(size);
     cout << "The generated array: " << endl;
     printArray(array);
-
+    cout << endl;
     vector<int> sorted = ShellSort(array, 0);
-    cout << endl << "After Shell sort (step 2h): " << endl;
+    cout << "After Shell sort (step 2h): " << endl;
     printArray(sorted);
     cout << "The number of switches required: " << switches << endl << endl;
 
