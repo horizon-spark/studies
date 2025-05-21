@@ -65,14 +65,13 @@ class Tree
                     parent = current;
                     if (id < current->iData) {
                         current = current->leftChild;
-                        if (current = NULL) {
+                        if (current == NULL) {
                             parent->leftChild = newNode;
-                            root->diplayNode();
                             return;
                         }
                     } else {
                         current = current->rightChild;
-                        if (current = NULL) {
+                        if (current == NULL) {
                             parent->rightChild = newNode;
                             return;
                         }
@@ -80,12 +79,25 @@ class Tree
                 }
             }
         }
+        
+        void printTree(Node* root)
+        {
+            if (root->leftChild) {
+                printTree(root->leftChild);
+            }
+            root->diplayNode();
+            if (root->rightChild) {
+                printTree(root->rightChild);
+            }
+            return;
+        }
 };
 
 int main()
 {
     Tree* theTree = new Tree();
     int key;
+
     theTree->insert(50);
     theTree->insert(25);
     theTree->insert(75);
@@ -97,7 +109,10 @@ int main()
     theTree->insert(87);
     theTree->insert(93);
     theTree->insert(97);
-    cout << "Insert a key: ";
+
+    theTree->printTree(theTree->root);
+
+    cout << "\nInsert a key: ";
     cin >> key;
     Node* found = theTree->find(key);
     if (found) 
