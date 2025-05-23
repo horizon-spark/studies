@@ -9,12 +9,14 @@ class Node
         int iData;
         Node* leftChild;
         Node* rightChild;
+        Node* parent;
 
         Node()
         {
             iData = 0;
             leftChild = NULL;
             rightChild = NULL;
+            parent = NULL;
         }
         void diplayNode()
         {
@@ -39,7 +41,7 @@ class Tree
         {
             root = NULL;
         }
-        Node* find(int key)
+        Node* findNode(int key)
         {
             Node* current = root;
             while (current->iData != key) {
@@ -52,7 +54,16 @@ class Tree
             }
             return current;
         }
-        void insert(int id)
+        Node* findNextNode(Node* current) 
+        {
+            Node* parent;
+            while (current) {
+                parent = current;
+                current = current->leftChild;
+            }
+            return parent;
+        }
+        void insertNode(int id)
         {
             Node* newNode = new Node();
             newNode->iData = id;
@@ -67,27 +78,84 @@ class Tree
                         current = current->leftChild;
                         if (current == NULL) {
                             parent->leftChild = newNode;
+                            parent->leftChild->parent = parent;
                             return;
                         }
                     } else {
                         current = current->rightChild;
                         if (current == NULL) {
                             parent->rightChild = newNode;
+                            parent->rightChild->parent = parent;
                             return;
                         }
                     }
                 }
             }
         }
-        
-        void printTree(Node* root)
+        void deleteNode(int id)
+        {   
+            if (!root) {
+                cout << "The tree is empty!" << endl;
+                return;
+            } 
+            Node* nodeToDelete = findNode(id);
+            if (!nodeToDelete) {
+                cout << "The node with id = " << id << " doesn't exist!" << endl;
+                return;
+            }
+            if (!(nodeToDelete->leftChild) && !(nodeToDelete->rightChild)) { // Если у удаляемого элемента нет детей
+                if (!(nodeToDelete->parent)) {
+                    delete(nodeToDelete);
+                } else if (nodeToDelete->iData > nodeToDelete->parent->iData) { // Если удаляемый элемент - правый сын (ключ больше родительского)
+                    nodeToDelete->parent->rightChild = NULL;
+                    delete(nodeToDelete);
+                } else {                                                    // Если удаляемый элемент - левый сын
+                    nodeToDelete->parent->leftChild = NULL;
+                    delete(nodeToDelete);
+                }
+            } else if (!(nodeToDelete->leftChild) && nodeToDelete->rightChild) { // Если у удаляемого элемента есть только правый сын
+                if (nodeToDelete->iData > nodeToDelete->parent->iData) {
+                    nodeToDelete->parent->rightChild = nodeToDelete->rightChild;
+                } else {
+                    nodeToDelete->parent->leftChild = nodeToDelete->rightChild;
+                }
+                nodeToDelete->rightChild->parent = nodeToDelete->parent;
+                delete(nodeToDelete);
+            } else if (nodeToDelete->leftChild && !(nodeToDelete->rightChild)) { // Если у удаляемого элемента есть только левый сын
+                if (nodeToDelete->iData > nodeToDelete->parent->iData) {
+                    nodeToDelete->parent->rightChild = nodeToDelete->leftChild;
+                } else {
+                    nodeToDelete->parent->leftChild = nodeToDelete->leftChild;
+                }
+                nodeToDelete->leftChild->parent = nodeToDelete->parent;
+                delete(nodeToDelete);
+            } else {                                                           // Если у удаляемого элемента есть и левый, и правый сыновья
+                Node* nextNode = findNextNode(nodeToDelete->rightChild);
+                if (nodeToDelete->iData > nodeToDelete->parent->iData) {
+                    nodeToDelete->parent->rightChild = nextNode;
+                } else {
+                    nodeToDelete->parent->leftChild = nextNode;
+                }
+                if (nextNode->parent != nodeToDelete) {                     // Если левое поддерево правого сына удаляемого элемента не пустое
+                    nextNode->parent->leftChild = NULL;
+                    nextNode->rightChild = nodeToDelete->rightChild;
+                } 
+                nextNode->leftChild = nodeToDelete->leftChild;
+                nextNode->parent = nodeToDelete->parent;
+                nodeToDelete->leftChild->parent = nextNode;
+                nodeToDelete->rightChild->parent = nextNode;
+                delete(nodeToDelete);
+            }
+
+        }
+        void displayTree(Node* root)
         {
             if (root->leftChild) {
-                printTree(root->leftChild);
+                displayTree(root->leftChild);
             }
             root->diplayNode();
             if (root->rightChild) {
-                printTree(root->rightChild);
+                displayTree(root->rightChild);
             }
             return;
         }
@@ -98,23 +166,31 @@ int main()
     Tree* theTree = new Tree();
     int key;
 
-    theTree->insert(50);
-    theTree->insert(25);
-    theTree->insert(75);
-    theTree->insert(12);
-    theTree->insert(37);
-    theTree->insert(43);
-    theTree->insert(30);
-    theTree->insert(33);
-    theTree->insert(87);
-    theTree->insert(93);
-    theTree->insert(97);
+    theTree->insertNode(25);
+    theTree->insertNode(12);
+    theTree->insertNode(37);
+    theTree->insertNode(7);
+    theTree->insertNode(43);
+    theTree->insertNode(30);
+    theTree->insertNode(39);
+    theTree->insertNode(47);
+    theTree->insertNode(33);
+    theTree->insertNode(50);
+    theTree->insertNode(75);
+    theTree->insertNode(2);
+    theTree->insertNode(87);
+    theTree->insertNode(93);
+    theTree->insertNode(97);
 
-    theTree->printTree(theTree->root);
+    theTree->displayTree(theTree->root);
+    cout << endl;
+    theTree->deleteNode(37);
+    
+    theTree->displayTree(theTree->root);
 
-    cout << "\nInsert a key: ";
+    cout << "\ninsert a key: ";
     cin >> key;
-    Node* found = theTree->find(key);
+    Node* found = theTree->findNode(key);
     if (found) 
         found->diplayNode();
     else 
