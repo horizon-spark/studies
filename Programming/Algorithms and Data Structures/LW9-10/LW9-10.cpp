@@ -114,7 +114,9 @@ class Tree
                     delete(nodeToDelete);
                 }
             } else if (!(nodeToDelete->leftChild) && nodeToDelete->rightChild) { // Если у удаляемого элемента есть только правый сын
-                if (nodeToDelete->iData > nodeToDelete->parent->iData) {
+                if (!nodeToDelete->parent) {
+                    root = nodeToDelete->rightChild;
+                } else if (nodeToDelete->iData > nodeToDelete->parent->iData) {
                     nodeToDelete->parent->rightChild = nodeToDelete->rightChild;
                 } else {
                     nodeToDelete->parent->leftChild = nodeToDelete->rightChild;
@@ -122,7 +124,9 @@ class Tree
                 nodeToDelete->rightChild->parent = nodeToDelete->parent;
                 delete(nodeToDelete);
             } else if (nodeToDelete->leftChild && !(nodeToDelete->rightChild)) { // Если у удаляемого элемента есть только левый сын
-                if (nodeToDelete->iData > nodeToDelete->parent->iData) {
+                if (!nodeToDelete->parent) {
+                    root = nodeToDelete->leftChild;
+                } else if (nodeToDelete->iData > nodeToDelete->parent->iData) {
                     nodeToDelete->parent->rightChild = nodeToDelete->leftChild;
                 } else {
                     nodeToDelete->parent->leftChild = nodeToDelete->leftChild;
@@ -131,19 +135,29 @@ class Tree
                 delete(nodeToDelete);
             } else {                                                           // Если у удаляемого элемента есть и левый, и правый сыновья
                 Node* nextNode = findNextNode(nodeToDelete->rightChild);
-                if (nodeToDelete->iData > nodeToDelete->parent->iData) {
-                    nodeToDelete->parent->rightChild = nextNode;
-                } else {
-                    nodeToDelete->parent->leftChild = nextNode;
-                }
                 if (nextNode->parent != nodeToDelete) {                     // Если левое поддерево правого сына удаляемого элемента не пустое
-                    nextNode->parent->leftChild = NULL;
+                    if (nextNode->rightChild) {                             // Если у найденного минимального элемента в правом поддереве есть правый сын (его нельзя просто удалить)
+                        nextNode->parent->leftChild = nextNode->rightChild;
+                        nextNode->rightChild->parent = nextNode->parent;
+                    } else {
+                        nextNode->parent->leftChild = NULL;
+                    }                              
                     nextNode->rightChild = nodeToDelete->rightChild;
+                    nodeToDelete->rightChild->parent = nextNode;
                 } 
                 nextNode->leftChild = nodeToDelete->leftChild;
-                nextNode->parent = nodeToDelete->parent;
+                if (nodeToDelete->parent) {                            // Если удаляем не корень
+                    if (nodeToDelete->iData > nodeToDelete->parent->iData) {
+                        nodeToDelete->parent->rightChild = nextNode;
+                    } else {
+                        nodeToDelete->parent->leftChild = nextNode;
+                    }
+                    nextNode->parent = nodeToDelete->parent;
+                } else {
+                    nextNode->parent = NULL;
+                    root = nextNode;
+                }
                 nodeToDelete->leftChild->parent = nextNode;
-                nodeToDelete->rightChild->parent = nextNode;
                 delete(nodeToDelete);
             }
 
@@ -166,25 +180,25 @@ int main()
     Tree* theTree = new Tree();
     int key;
 
+    theTree->insertNode(50);
     theTree->insertNode(25);
+    theTree->insertNode(75);
     theTree->insertNode(12);
+    theTree->insertNode(87);
     theTree->insertNode(37);
-    theTree->insertNode(7);
     theTree->insertNode(43);
+    theTree->insertNode(93);
     theTree->insertNode(30);
+    theTree->insertNode(7);
+    theTree->insertNode(33);
     theTree->insertNode(39);
     theTree->insertNode(47);
-    theTree->insertNode(33);
-    theTree->insertNode(50);
-    theTree->insertNode(75);
-    theTree->insertNode(2);
-    theTree->insertNode(87);
-    theTree->insertNode(93);
     theTree->insertNode(97);
+    theTree->insertNode(2);
 
     theTree->displayTree(theTree->root);
     cout << endl;
-    theTree->deleteNode(37);
+    theTree->deleteNode(50);
     
     theTree->displayTree(theTree->root);
 
