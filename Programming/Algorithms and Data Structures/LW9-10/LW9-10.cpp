@@ -180,25 +180,19 @@ int main()
     Tree* theTree = new Tree();
     int key;
 
+    theTree->insertNode(100);
+    theTree->insertNode(110);
     theTree->insertNode(50);
-    theTree->insertNode(25);
-    theTree->insertNode(75);
     theTree->insertNode(12);
     theTree->insertNode(87);
-    theTree->insertNode(37);
-    theTree->insertNode(43);
-    theTree->insertNode(93);
-    theTree->insertNode(30);
-    theTree->insertNode(7);
-    theTree->insertNode(33);
-    theTree->insertNode(39);
-    theTree->insertNode(47);
-    theTree->insertNode(97);
-    theTree->insertNode(2);
+    theTree->insertNode(137);
+    theTree->insertNode(104);
+    theTree->insertNode(105);
+    theTree->insertNode(102);
 
     theTree->displayTree(theTree->root);
     cout << endl;
-    theTree->deleteNode(50);
+    theTree->deleteNode(100);
     
     theTree->displayTree(theTree->root);
 
