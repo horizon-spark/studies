@@ -1,0 +1,37 @@
+<!--- (1) -->
+<!-- <!DOCTYPE html>
+<html>
+  <body>
+    <div data-widget-name="menu">Choose the genre</div>
+
+    <script>
+      let div = document.querySelector("div");
+      //   alert(div.dataset.widgetName);
+      alert(div.getAttribute("data-widget-name"));
+    </script>
+  </body>
+</html> -->
+
+<!-- (2) -->
+<a name="list">the list</a>
+<ul>
+  <li><a href="http://google.com">http://google.com</a></li>
+  <li><a href="/tutorial">/tutorial.html</a></li>
+  <li><a href="local/path">local/path</a></li>
+  <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+  <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+  <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
+
+<script>
+  // добавление стиля для одной ссылки
+  //   let link = document.querySelector("a");
+  //   link.style.color = "orange";
+
+  let links = document.querySelectorAll("li a");
+  for (let link of links) {
+    let attr = link.getAttribute("href");
+    if (attr.includes("://") && !attr.startsWith("http://internal.com"))
+      link.style.color = "orange";
+  }
+</script>
