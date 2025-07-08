@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Modification</title>
+  </head>
+  <body>
+    <script>
+      // (1)
+
+      //   let ul = document.createElement("ul");
+      //   document.body.append(ul);
+      //   while (true) {
+      //     let data = prompt("Insert list element", "");
+      //     if (!data) break;
+      //     let li = document.createElement("li");
+      //     li.textContent = data;
+      //     // li.append(data); или так
+      //     ul.append(li);
+      //   }
+
+      // (2)
+
+      // Общие для всех решений данные
+      //   let div = document.createElement("div");
+      //   div.id = "container";
+      //   document.body.append(div);
+
+      //   let data = {
+      //     Рыбы: {
+      //       форель: {},
+      //       лосось: {},
+      //     },
+
+      //     Деревья: {
+      //       Огромные: {
+      //         секвойя: {},
+      //         дуб: {},
+      //       },
+      //       Цветковые: {
+      //         яблоня: {},
+      //         магнолия: {},
+      //       },
+      //     },
+      //   };
+
+      // Моя версия кода (недочет - создает пустые ul во вложенных списках)
+      //   function createTree(container, data) {
+      //     let ul = document.createElement("ul");
+      //     container.append(ul);
+      //     Object.keys(data).forEach((key) => {
+      //       let li = document.createElement("li");
+      //       li.textContent = key;
+      //       ul.append(li);
+      //       createTree(ul, data[key]);
+      //     });
+      //   }
+
+      //   function createTree(container, obj) {
+      //     container.append(createTreeDom(obj));
+      //   }
+
+      //   function createTreeDom(obj) {
+      //     if (!Object.keys(obj).length) return; // Если нет дочерних элементов - ul не создается
+
+      //     let ul = document.createElement("ul");
+
+      //     for (let key in obj) {
+      //       let li = document.createElement("li");
+      //       li.textContent = key;
+
+      //       let childUl = createTreeDom(obj[key]);
+      //       if (childUl) {
+      //         li.append(childUl);
+      //       }
+
+      //       ul.append(li);
+      //     }
+
+      //     return ul;
+      //   }
+
+      //   createTree(div, data);
+    </script>
+  </body>
+</html>
