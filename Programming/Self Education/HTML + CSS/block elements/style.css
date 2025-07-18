@@ -1,0 +1,41 @@
+body {
+  background: rgb(28, 28, 107);
+}
+form {
+  background: rgb(53, 53, 161);
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid rgba(223, 218, 218, 0.295);
+  box-shadow: 5px 5px 5px rgb(7, 9, 34);
+}
+.row {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+label {
+  color: rgb(140, 140, 223);
+  width: 100px;
+  float: left;
+  text-align: right;
+  margin-right: 10px;
+}
+input,
+textarea {
+  background: rgb(15, 15, 122);
+  width: 250px;
+  border: none;
+  color: white;
+  padding: 5px;
+}
+textarea {
+  height: 100px;
+}
+button {
+  margin-left: 110px;
+  background: rgb(6, 2, 46);
+  border: none;
+  color: rgb(140, 140, 223);
+  padding: 10px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
