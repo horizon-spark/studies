@@ -1,0 +1,19 @@
+.wrapper {
+  width: 400px;
+  margin: auto;
+}
+.btn {
+  color: white;
+  background-color: orange;
+  width: 100px;
+  border: 0px;
+  border-bottom: 3px solid rgb(196, 128, 2);
+  border-radius: 3px;
+  transition: 0.5s;
+  top: 0;
+  position: relative;
+}
+.btn:active {
+  border-bottom: 0px;
+  top: 3px;
+}

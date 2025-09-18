@@ -1,0 +1,24 @@
+div {
+    font-family: Oswald, sans-serif;
+    margin: 1rem 0;
+    line-height: 2;
+}
+div span {
+    background-color: rgb(230, 184, 100);
+    padding: 2px 7px
+}
+div .light {
+    font-weight: 300;
+}
+div .regular {
+    font-weight: 400;
+}
+div .medium {
+    font-weight: 500;
+}
+div .semi-bold {
+    font-weight: 600;
+}
+div .bold {
+    font-weight: 700;
+}

@@ -1,0 +1,11 @@
+section {
+    text-align: center;
+}
+.weather {
+    background-color: rgb(79, 101, 226);
+    color: aliceblue;
+    display: inline-block;
+    padding: 10px;
+    margin: 0 5px;
+    text-align: center;
+}
