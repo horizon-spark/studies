@@ -1,0 +1,14 @@
+.buttonList {
+  margin: auto;
+  text-align: center;
+  width: 15rem;
+}
+.button {
+  width: 5rem;
+  height: 5rem;
+  background-color: red;
+  color: aliceblue;
+}
+.button:disabled {
+  background-color: green;
+}
