@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Авторизация</title>
+  </head>
+  <body>
+    <form name="authorization" method="post">
+      <p>
+        <b>Логин:</b><br /><input type="text" placeholder="Введите логин" />
+      </p>
+      <p>
+        <b>Пароль:</b><br /><input
+          type="password"
+          placeholder="Введите пароль"
+        />
+      </p>
+      <p><i>Запомнить пароль</i><input type="checkbox" /></p>
+    </form>
+    <p>
+      <a href="main-authorized.html"><button>Войти</button></a>
+      <!--
+      Пока это просто кнопка с тегом button, но после добавления обработчика она станет input и будет добавлена в form
+      -->
+    </p>
+    <p>
+      <span>Нет аккаунта?</span>
+      <a href="registration.html"><button>Регистрация</button></a>
+    </p>
+  </body>
+</html>
