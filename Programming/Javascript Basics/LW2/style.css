@@ -1,0 +1,28 @@
+.main {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+.input {
+  display: inline-block;
+  width: 50%;
+}
+.inputField {
+  width: 100%;
+  text-align: left;
+}
+.numberButtons {
+  display: inline-block;
+  width: 50%;
+}
+.numberButton {
+  width: 30%;
+}
+.operationButtons {
+  display: inline-block;
+  width: 20%;
+}
+.operationButton {
+  display: inline-block;
+  width: 50%;
+}
