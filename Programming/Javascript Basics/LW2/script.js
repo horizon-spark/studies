@@ -9,12 +9,17 @@ operationSet.add("-");
 operationSet.add("+");
 
 const handleClearAllButtonClick = () => {
-  inputNode.value = "";
+  inputNode.value = "0";
 };
 const clearAllButton = document.querySelector("#clearAll");
 clearAllButton.onclick = () => handleClearAllButtonClick();
 
 const handleClearButtonClick = () => {
+  const elems = inputNode.value.split(" ");
+  if (elems.length === 1 && Math.abs(+elems[0]) < 10) {
+    inputNode.value = "0";
+    return;
+  }
   if (operationSet.has(inputNode.value.at(-2))) {
     inputNode.value = inputNode.value.slice(0, inputNode.value.length - 3);
     return;
@@ -25,6 +30,11 @@ const clearButton = document.querySelector("#clear");
 clearButton.onclick = () => handleClearButtonClick();
 
 const handleNumberButtonClick = (button) => {
+  const elems = inputNode.value.split(" ");
+  if (+elems.length === 1 && +elems[0] === 0) {
+    inputNode.value = "";
+  }
+
   inputNode.value += button.id;
 };
 for (let i = 0; i < 10; i++) {
@@ -36,6 +46,10 @@ const equalize = (arr) => {
   if (arr.length !== 3) return;
   switch (arr[1]) {
     case "/":
+      if (+arr[2] === 0) {
+        alert("Ошибка! Деление на ноль!");
+        return 0;
+      }
       return arr[0] / arr[2];
     case "*":
       return arr[0] * arr[2];
@@ -84,10 +98,8 @@ for (let button of operationButtonNodes) {
 const handleEqualButtonClick = () => {
   if (inputNode.value === "") return;
   const elems = inputNode.value.split(" ");
-  console.log(elems);
   if (elems.length === 3 && elems.at(-1) !== "") {
     inputNode.value = equalize(elems);
-    console.log("Вызов equalize");
   }
 };
 const equalButton = document.querySelector("#equal");
