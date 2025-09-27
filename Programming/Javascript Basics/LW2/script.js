@@ -104,3 +104,34 @@ const handleEqualButtonClick = () => {
 };
 const equalButton = document.querySelector("#equal");
 equalButton.onclick = () => handleEqualButtonClick();
+
+const EPS = 0.000000001;
+const cosX = (x) => {
+  let sign = -1.0;
+  let num = x * x,
+    denom = 2.0;
+  let firstElem = 1.0;
+  let secondElem = sign * (num / denom);
+  let sum = firstElem + secondElem;
+  for (let i = 4.0; ; i += 2.0) {
+    if (Math.abs(Math.abs(firstElem) - Math.abs(secondElem)) < EPS) break;
+    sign *= -1.0;
+    firstElem = secondElem;
+    num *= x * x;
+    denom *= (i - 1.0) * i;
+    secondElem = sign * (num / denom);
+    sum += secondElem;
+  }
+  return sum;
+};
+
+const handleCosButtonClick = () => {
+  if (inputNode.value === "") return;
+  const elems = inputNode.value.split(" ");
+  if (elems.length === 3 && elems.at(-1) !== "") {
+    inputNode.value = equalize(elems);
+  }
+  inputNode.value = cosX(inputNode.value);
+};
+const cosButton = document.querySelector("#cos");
+cosButton.onclick = () => handleCosButtonClick();
