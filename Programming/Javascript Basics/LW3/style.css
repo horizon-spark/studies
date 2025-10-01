@@ -1,0 +1,22 @@
+h2 {
+  text-align: center;
+}
+.translator {
+  width: 40%;
+  margin: auto;
+}
+.inputText,
+.outputText {
+  width: 40%;
+  height: 3rem;
+}
+.english,
+.russian {
+  width: 40%;
+  height: 1rem;
+  text-align: center;
+}
+.translations {
+  width: 30%;
+  margin: auto;
+}
