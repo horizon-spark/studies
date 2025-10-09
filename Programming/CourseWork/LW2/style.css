@@ -1,0 +1,66 @@
+body {
+  background-color: beige;
+}
+table {
+  border: 1px solid white;
+}
+th {
+  color: black;
+  padding: 0.5rem;
+  background-color: rgb(93, 158, 255);
+}
+tr {
+  color: azure;
+}
+tr:nth-child(even) {
+  background-color: rgb(78, 48, 13);
+}
+tr:nth-child(odd) {
+  background-color: rgb(139, 86, 16);
+}
+td {
+  padding: 0.5rem;
+}
+td:first-child {
+  background-color: rgb(47, 63, 107);
+}
+
+.btn {
+  -webkit-border-radius: 26;
+  -moz-border-radius: 26;
+  border-radius: 26px;
+  font-family: Georgia;
+  color: #303030;
+  font-size: 20px;
+  background: #faa8cf;
+  padding: 8px 40px 10px 40px;
+  border: solid #fafafa 2px;
+  text-decoration: none;
+}
+.btn:hover {
+  text-decoration: none;
+}
+
+.weatherTabs {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.weatherTab {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0.5rem;
+}
+.weatherTab span {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.weatherTab span:first-child {
+  background-color: rgb(52, 101, 156);
+  font-size: 1.5rem;
+  color: azure;
+}
+.weatherTab span:last-child {
+  font-size: 2.5rem;
+}

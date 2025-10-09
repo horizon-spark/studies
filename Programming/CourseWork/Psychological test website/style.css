@@ -1,0 +1,39 @@
+html {
+  font-size: 18px;
+}
+body {
+  background-color: beige;
+  font-size: 1rem;
+  color: rgb(41, 41, 40);
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  margin-top: 0.7rem;
+  height: 2rem;
+}
+header a {
+  text-decoration: none;
+  color: black;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+a:visited {
+  color: black;
+  font-style: italic;
+}
+a:hover {
+  background-color: rgb(136, 189, 136);
+  transition: 0.5s;
+}
+a:active {
+  background-color: beige;
+}
+p {
+  text-align: left;
+  text-indent: 3rem;
+}
+p::first-letter {
+  font-size: 1.1rem;
+}
