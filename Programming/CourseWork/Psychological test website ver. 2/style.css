@@ -1,0 +1,68 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+.header {
+  margin: 1.5rem 0rem;
+}
+.hat {
+  margin: 1.5rem 0rem;
+  background-color: aqua;
+}
+.horizontalMenu {
+  padding: 1rem;
+  background-color: aquamarine;
+}
+.horizontalMenu a {
+  padding: 0rem 1.4rem;
+}
+.mainContent {
+  display: flex;
+}
+.leftColumn {
+  width: 20%;
+  background-color: rgb(129, 129, 238);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.verticalMenu {
+  width: 90%;
+  padding-left: 0.5rem;
+  margin: 1.5rem 0rem;
+  background-color: blueviolet;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.verticalMenu p {
+  padding: 0.7rem 0rem;
+}
+.authorization {
+  width: 90%;
+  padding-left: 0.5rem;
+  margin: 1.5rem 0rem;
+  background-color: rgb(151, 94, 204);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.authorization div {
+  padding: 0.5rem 0rem;
+}
+.authorization h3 {
+  padding: 0.7rem 0rem;
+}
+.authorization input {
+  width: 80%;
+  margin-top: 0.3rem;
+}
+.pageContent {
+  width: 60%;
+  padding: 1.5rem;
+  margin: 0rem 1rem;
+  background-color: antiquewhite;
+  border-radius: 5px;
+}
+.banner {
+  width: 20%;
+}
