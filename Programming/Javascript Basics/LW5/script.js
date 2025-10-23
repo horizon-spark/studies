@@ -27,13 +27,21 @@ for (let alf = 0; alf <= 2 * Math.PI; alf += Math.PI / 6) {
 }
 context.stroke();
 
-context.beginPath();
-context.lineWidth = 2.5;
-context.moveTo(center.x, center.y);
-context.lineTo(center.x, center.y - r1 + 20);
-context.stroke();
+context.translate(center.x, center.y);
+
+const seconds = new Date().getSeconds();
+context.rotate((Math.PI / 30) * seconds - Math.PI);
 
 context.beginPath();
-context.moveTo(center.x, center.y);
-context.lineTo(center.x, center.y + r1 - 50);
+context.fillRect(-2, 0, 4, 80);
 context.stroke();
+
+setInterval(() => {
+  context.clearRect(-3, 0, 6, 81);
+  context.beginPath();
+  context.arc(0, 0, 3, 0, 2 * Math.PI, true);
+  context.fill();
+  context.rotate(Math.PI / 30);
+  context.fillRect(-2, 0, 4, 80);
+  context.stroke();
+}, 1000);
