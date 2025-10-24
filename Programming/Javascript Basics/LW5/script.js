@@ -1,47 +1,46 @@
 "use strict";
 
 const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
-context.font = "22px Verdana";
+const ctx = canvas.getContext("2d");
 
-const center = { x: 250, y: 150 };
-const r1 = 100,
-  r2 = 110;
+let arrX = [
+  -Math.PI,
+  -Math.PI / 2,
+  -Math.PI / 3,
+  -Math.PI / 4,
+  -Math.PI / 6,
+  0,
+  Math.PI / 6,
+  Math.PI / 4,
+  Math.PI / 3,
+  Math.PI / 2,
+  Math.PI,
+];
 
-context.beginPath();
-context.arc(center.x, center.y, 3, 0, 2 * Math.PI, true);
-context.fill();
+let arrY = arrX.map((x) => Math.cos(x));
 
-context.beginPath();
-context.arc(center.x, center.y, r1, 0, 2 * Math.PI, true);
-context.arc(center.x, center.y, r2, 0, 2 * Math.PI, true);
+arrX.forEach((x, index) => {
+  arrX[index] = (arrX[index] * 250) / Math.PI;
+});
+arrY.forEach((y, index) => {
+  arrY[index] = arrY[index] * 150;
+});
 
-context.moveTo(center.x + r1, center.y);
+ctx.beginPath();
+ctx.moveTo(0, 150);
+ctx.lineTo(500, 150);
+ctx.stroke();
 
-for (let alf = 0; alf <= 2 * Math.PI; alf += Math.PI / 6) {
-  context.arc(center.x, center.y, r1, alf, alf + Math.PI / 6, false);
-  context.moveTo(
-    center.x + r2 * Math.cos(alf + Math.PI / 6),
-    center.y + r2 * Math.sin(alf + Math.PI / 6)
-  );
+ctx.beginPath();
+ctx.moveTo(250, 0);
+ctx.lineTo(250, 300);
+ctx.stroke();
+
+ctx.translate(250, 150);
+
+ctx.beginPath();
+ctx.moveTo(arrX[0], arrY[0]);
+for (let i = 1; i < arrX.length; i++) {
+  ctx.lineTo(arrX[i], arrY[i]);
 }
-context.stroke();
-
-context.translate(center.x, center.y);
-
-const seconds = new Date().getSeconds();
-context.rotate((Math.PI / 30) * seconds - Math.PI);
-
-context.beginPath();
-context.fillRect(-2, 0, 4, 80);
-context.stroke();
-
-setInterval(() => {
-  context.clearRect(-3, 0, 6, 81);
-  context.beginPath();
-  context.arc(0, 0, 3, 0, 2 * Math.PI, true);
-  context.fill();
-  context.rotate(Math.PI / 30);
-  context.fillRect(-2, 0, 4, 80);
-  context.stroke();
-}, 1000);
+ctx.stroke();
