@@ -2,67 +2,106 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  height: 94vh;
+  background: linear-gradient(#dee4f0, #dde3f1);
 }
-.header {
-  margin: 1.5rem 0rem;
-}
-.hat {
-  margin: 1.5rem 0rem;
-  background-color: aqua;
-}
-.horizontalMenu {
-  padding: 1rem;
-  background-color: aquamarine;
-}
-.horizontalMenu a {
-  padding: 0rem 1.4rem;
-}
-.mainContent {
-  display: flex;
-}
-.leftColumn {
-  width: 20%;
-  background-color: rgb(129, 129, 238);
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.verticalMenu {
-  width: 90%;
-  padding-left: 0.5rem;
-  margin: 1.5rem 0rem;
-  background-color: blueviolet;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.verticalMenu p {
-  padding: 0.7rem 0rem;
-}
-.authorization {
-  width: 90%;
-  padding-left: 0.5rem;
-  margin: 1.5rem 0rem;
-  background-color: rgb(151, 94, 204);
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.authorization div {
-  padding: 0.5rem 0rem;
-}
-.authorization h3 {
-  padding: 0.7rem 0rem;
-}
-.authorization input {
-  width: 80%;
-  margin-top: 0.3rem;
-}
-.pageContent {
-  width: 60%;
-  padding: 1.5rem;
-  margin: 0rem 1rem;
-  background-color: antiquewhite;
+a {
   border-radius: 5px;
 }
-.banner {
-  width: 20%;
+a:visited {
+  color: black;
+  font-style: italic;
+}
+a:hover {
+  background-color: rgb(136, 189, 136);
+  transition: 0.5s;
+}
+a:active {
+  background-color: beige;
+}
+p {
+  text-align: left;
+  text-indent: 3rem;
+}
+p::first-letter {
+  font-size: 2rem;
+}
+strong {
+  font-weight: 600;
+}
+.content {
+  display: grid;
+  margin: auto;
+  margin-top: 5rem;
+  padding: 5vh;
+  padding-top: 2vh;
+  width: 80%;
+  height: 100%;
+  gap: 5%;
+  grid-template-rows: 20% 60% 10%;
+  background-color: #445f96;
+  border-radius: 10px;
+  overflow: scroll;
+}
+.header {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+.hat {
+  display: grid;
+  grid-template-columns: 30vh 30vh;
+  margin: auto;
+}
+.horizontalMenu {
+  display: grid;
+  padding: 1vh;
+  text-align: center;
+  vertical-align: middle;
+  grid-template-columns: 12rem 12rem 12rem;
+  border-radius: 5px;
+  background-color: #bccef1;
+}
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 2%;
+}
+.interactiveContent {
+  display: grid;
+  padding: 1vh;
+  grid-template-rows: 1fr 2fr;
+  border-radius: 5px;
+  background-color: #d2dbee;
+}
+.verticalMenu {
+  display: grid;
+  grid-template-rows: 20% 20%;
+}
+.verticalMenu a {
+  display: block;
+}
+.authorizationForm {
+  display: grid;
+  gap: 10%;
+  grid-template-columns: 60%;
+}
+.authorizationForm a {
+  display: block;
+  text-align: right;
+}
+.pageContent {
+  background-color: #f3f3fc;
+  padding: 1vh;
+  border-radius: 5px;
+  font-size: 2rem;
+  overflow: scroll;
+}
+.footer {
+  background-color: rgb(17, 20, 70);
+  border-radius: 20px;
+  padding: 1vh;
+}
+.footer p {
+  color: #9a9ac7;
 }
