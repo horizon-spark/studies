@@ -47,7 +47,7 @@ context.fillRect(-2, 0, 5, 80);
 context.stroke();
 
 let iter = 1;
-setInterval(() => {
+let timerId = setInterval(() => {
   context.clearRect(-3, 0, 8, 85);
 
   if (iter < 31) {
@@ -57,7 +57,8 @@ setInterval(() => {
   } else if (iter < 60) {
     context.fillStyle = "red";
   } else {
-    iter = 1;
+    alert("Вы проиграли!");
+    iter = 0;
   }
 
   context.beginPath();
@@ -70,3 +71,18 @@ setInterval(() => {
   iter++;
   console.log(iter);
 }, 1000);
+
+const LeosBirthday = document.getElementById("LeosBirthday");
+
+LeosBirthday.oninput = () => {
+  let inputValue = LeosBirthday.value;
+  console.log(inputValue);
+  if (inputValue == 1828) {
+    clearTimeout(timerId);
+    let div = document.createElement("div");
+    const audio = document.querySelector("audio");
+    audio.volume = 0;
+    div.innerHTML += `<p>Ваше время ещё не пришло</p>`;
+    document.body.append(div);
+  }
+};
