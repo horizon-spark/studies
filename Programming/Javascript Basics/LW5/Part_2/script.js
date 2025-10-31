@@ -19,6 +19,8 @@ buttonElement.onclick = () => {
     `${a} * sin(${b} * x) + ${c}`,
     `${a} * tan(${b} * x) + ${c}`,
     `${a} * (1 / tan(${b} * x)) + ${c}`,
+    `${a} * x^${b} + ${c}`,
+    `${a}^x`,
   ];
 
   functionPlot({

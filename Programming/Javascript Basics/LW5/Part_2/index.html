@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #content {
+        display: grid;
+        grid-template-columns: 150px auto;
+      }
+      #menu {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+    <div id="content">
+      <div id="menu">
+        <div><span>a</span><input type="number" id="a" /></div>
+        <div><span>b</span> <input type="number" id="b" /></div>
+        <div><span>c</span><input type="number" id="c" /></div>
+        <select name="select" id="select">
+          <option value="0">
+            <span>ax^2 + bx + c</span>
+          </option>
+          <option value="1">ae^(bx) + c</option>
+          <option value="2">a*cos(bx) + c</option>
+          <option value="3">a*sin(bx) + c</option>
+          <option value="4">a*tg(bx) + c</option>
+          <option value="5">a*ctg(bx) + c</option>
+          <option value="6">ax^b + c</option>
+          <option value="7">a^x</option>
+        </select>
+        <button id="button">Построить</button>
+      </div>
+      <div id="plot"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
