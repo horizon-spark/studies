@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #canvas {
+        display: flex;
+        margin: auto;
+        padding-bottom: 5%;
+      }
+      .input {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
+    <audio src="ticking.mp3" autoplay loop></audio>
     <canvas id="canvas" width="500" height="300"></canvas>
+    <div class="input">
+      <span>Год рождения Льва Николаевича Толстого? </span>
+      <input type="text" id="LeosBirthday" placeholder="Введите ответ" />
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
