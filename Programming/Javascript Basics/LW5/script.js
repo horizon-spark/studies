@@ -1,46 +1,43 @@
 "use strict";
 
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
+const buttonElement = document.querySelector("#button");
+const select = document.querySelector("#select");
+const aElem = document.querySelector("#a");
+const bElem = document.querySelector("#b");
+const cElem = document.querySelector("#c");
 
-let arrX = [
-  -Math.PI,
-  -Math.PI / 2,
-  -Math.PI / 3,
-  -Math.PI / 4,
-  -Math.PI / 6,
-  0,
-  Math.PI / 6,
-  Math.PI / 4,
-  Math.PI / 3,
-  Math.PI / 2,
-  Math.PI,
-];
+buttonElement.onclick = () => {
+  const a = aElem.value ? aElem.value : 0;
+  const b = bElem.value ? bElem.value : 0;
+  const c = cElem.value ? cElem.value : 0;
 
-let arrY = arrX.map((x) => Math.cos(x));
+  const functionNumber = select.value;
+  const plotFunctions = [
+    `${a} * x^2 + ${b} * x + ${c}`,
+    `${a} * exp(${b} * x) + ${c}`,
+    `${a} * cos(${b} * x) + ${c}`,
+    `${a} * sin(${b} * x) + ${c}`,
+    `${a} * tan(${b} * x) + ${c}`,
+    `${a} * (1 / tan(${b} * x)) + ${c}`,
+  ];
 
-arrX.forEach((x, index) => {
-  arrX[index] = (arrX[index] * 250) / Math.PI;
-});
-arrY.forEach((y, index) => {
-  arrY[index] = arrY[index] * 150;
-});
-
-ctx.beginPath();
-ctx.moveTo(0, 150);
-ctx.lineTo(500, 150);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(250, 0);
-ctx.lineTo(250, 300);
-ctx.stroke();
-
-ctx.translate(250, 150);
-
-ctx.beginPath();
-ctx.moveTo(arrX[0], arrY[0]);
-for (let i = 1; i < arrX.length; i++) {
-  ctx.lineTo(arrX[i], arrY[i]);
-}
-ctx.stroke();
+  functionPlot({
+    title: plotFunctions[functionNumber],
+    target: "#plot",
+    width: 580,
+    height: 400,
+    disableZoom: false,
+    xAxis: {
+      label: "x - axis",
+      domain: [-6, 6],
+    },
+    yAxis: {
+      label: "y - axis",
+    },
+    data: [
+      {
+        fn: plotFunctions[functionNumber],
+      },
+    ],
+  });
+};
