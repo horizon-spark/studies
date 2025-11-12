@@ -40,6 +40,9 @@ buttonElement.onclick = () => {
       {
         fn: plotFunctions[functionNumber],
       },
+      {
+        fn: "1 + x",
+      },
     ],
   });
 };
